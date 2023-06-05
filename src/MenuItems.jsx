@@ -1,12 +1,13 @@
 import { menuData } from "./menuData";
 import "./MenuItems.css";
 
-export default function MenuItems() {
+export default function MenuItems({ addToOrder }) {
   //   const [hover, setHover] = useState(false);
   function handleClick(e) {
     // This will prevent any synthetic events from firing after this one
     // e.stopPropagation();
     e.preventDefault();
+    addToOrder(item.name, item.price);
     // e.target.style.backgroundColor = "gray";
   }
 
@@ -16,25 +17,12 @@ export default function MenuItems() {
         <div
           key={index}
           className="item"
-          onClick={(e) => handleClick(e)}
-          onMouseEnter={(e) => {
-            e.stopPropagation();
-            e.target.style.backgroundColor = "gray";
-          }}
-          onMouseLeave={(e) => {
-            e.stopPropagation();
-            e.target.style.backgroundColor = "white";
+          onClick={(e) => {
+            e.preventDefault();
+            addToOrder(item.name, item.price);
           }}
         >
           <li
-            onMouseEnter={(e) => {
-              e.stopPropagation();
-              e.target.style.backgroundColor = "gray";
-            }}
-            onMouseLeave={(e) => {
-              e.stopPropagation();
-              e.target.style.backgroundColor = "white";
-            }}
             style={{
               display: "flex",
               justifyContent: "space-between",
