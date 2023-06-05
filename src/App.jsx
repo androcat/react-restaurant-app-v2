@@ -24,13 +24,8 @@ function App() {
 
   return (
     <>
-      <main
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "baseline",
-        }}
-      >
+      <h1>Jay's Colombian American Fusion</h1>
+      <main className="main">
         <MenuList addToOrder={addToOrder} />
         <Order orderList={orderList} />
       </main>

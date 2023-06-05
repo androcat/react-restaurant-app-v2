@@ -1,11 +1,12 @@
 import MenuItems from "./menuItems";
+import "./MenuList.css";
 
 export default function MenuList({ addToOrder }) {
   return (
     <>
-      <section>
-        <h1>Jay's Colombian American Fusion</h1>
-        <ul style={{ width: "100%" }}>
+      <section className="menu">
+        <h2>Menu</h2>
+        <ul>
           <MenuItems addToOrder={addToOrder} />
         </ul>
       </section>
