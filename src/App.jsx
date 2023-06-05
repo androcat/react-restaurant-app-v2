@@ -7,12 +7,19 @@ import Order from "./Order";
 function App() {
   const [orderList, setOrderList] = useState([]);
 
-  const addToOrder = function (name, price) {
-    const newOrder = { name, price };
+  const addToOrder = function (item) {
+    const newOrder = { name: item.name, price: item.price, qty: item.qty };
 
     setOrderList([...orderList, newOrder]);
 
-    console.log({ orderList });
+    // if (item.qty === 0) {
+    //   item.qty++;
+    //   console.log(item.qty);
+    //   setOrderList([...orderList, newOrder]);
+    // } else {
+    //   item.qty++;
+    //   setOrderList([...orderList]);
+    // }
   };
 
   return (
